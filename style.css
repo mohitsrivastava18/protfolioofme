@@ -1,0 +1,209 @@
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #000;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: transparent;
+      position: absolute;
+      width: 100%;
+      z-index: 100;
+      animation: fadeDown 1s ease-in-out;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-btn {
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      background: #eee;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left {
+      background-color: #d3d3d3;
+      flex: 1;
+      padding: 150px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: slideInLeft 1.5s ease;
+    }
+
+    .typing h1::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+
+    .left h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 3px solid;
+  animation: typing 2s steps(20) forwards;
+}
+
+.left h1.typed-done {
+  border-right: none;
+}
+
+    .left h3 {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 2.5s;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 3s;
+    }
+
+    .social-icons img {
+      width: 35px;
+      height: 35px;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 6px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .right {
+      flex: 1;
+      background-color: #000;
+      background-image: url('./images/33f5a0d1-3c00-470c-922b-410b8eaac9e6-removebg-preview (1).png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      animation: fadeIn 2s ease;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      animation: bounce 2s infinite;
+    }
+
+    /* Keyframes */
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .right {
+        height: 40vh;
+      }
+    }

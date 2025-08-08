@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+    }
+
+    .left, .right {
+      width: 50%;
+      padding: 60px;
+    }
+
+    .left {
+      background: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .left h1 span {
+      background: #e7c7c1;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .left p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .left p span {
+      font-weight: bold;
+    }
+
+    .icons {
+      margin-top: 30px;
+    }
+
+    .icons p {
+      margin-bottom: 10px;
+    }
+
+    .slinks a {
+      display: inline-block;
+      margin: 5px 10px 5px 0;
+      text-decoration: underline;
+      font-style: italic;
+      color: #000;
+    }
+
+    .right {
+      background: #0e0e0e;
+      color: white;
+    }
+
+    .right h2 {
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 15px;
+      border: none;
+      background: #ff4000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left, .right {
+        width: 100%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Contact <span>Me.</span></h1>
+      <p>I will read all my emails one by one and I’m not going to let them be missed. Send me any message you want and I will reply to that.</p>
+      <p>I need your <span>Name</span> and <span>Email Address</span> but you won't receive anything but your reply only.</p>
+      <div class="icons">
+        <p><strong>Social Media links:</strong></p>
+        <div class="slinks">
+          <a href="https://x.com/the_msrivastava" target="_blank">Twitter</a>
+          <a href="https://www.instagram.com/the_msrivastava/" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/mohit-srivastava-33b441241/" target="_blank">LinkedIn</a>
+          <a href="mailto:mohitsrivastava.bhu@gmail.com">Gmail</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>Send Me A Message</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="First Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Message" rows="6"></textarea>
+        <button type="submit">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+    });
+  </script>
+</body>
+</html>
